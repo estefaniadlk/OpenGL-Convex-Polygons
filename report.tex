@@ -1,0 +1,50 @@
+% Τεκμηρίωση πρώτης ερευνητικής εργασίας του μαθήματος ΓΡΑΦΙΚΗ ΥΠΟΛΟΓΙΣΤΩΝ
+
+\documentclass[12pt]{report}
+\usepackage[a4paper, margin=3cm, bottom=3cm]{geometry} 
+\linespread{1.3} % διάστιχο: 1,5
+\usepackage{tempora} % Times New Roman
+\usepackage[LGR, T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, greek]{babel}
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\graphicspath{{images/}}
+\usepackage{alphabeta}
+\usepackage{gensymb}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter{. }}{0pt}{\Huge\bfseries}
+\titlespacing*{\chapter} {0pt}{10pt}{20pt}
+\titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\usepackage[labelfont=bf]{caption}
+\addto\captionsgreek{\renewcommand{\figurename}{Εικόνα}}
+
+\usepackage{etoolbox}
+\makeatletter
+    \patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+\begin{document}
+\renewcommand\bibname{Πηγές}
+
+\pagenumbering{arabic}
+
+\input{tex/Front}
+\input{tex/Abstract}
+\newpage
+
+\renewcommand*\contentsname{Περιεχόμενα}
+\tableofcontents
+\newpage
+
+\input{tex/Ιntroduction}
+\input{tex/Documentation}
+\input{tex/Ιmplementation}
+\input{tex/Conclusions}
+\newpage
+\input{tex/Bibliography}
+
+\end{document}
